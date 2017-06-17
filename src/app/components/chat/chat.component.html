@@ -1,0 +1,24 @@
+<div class="register" *ngIf="!alert">
+    <label for="">Username:</label>
+    <input type="text" name="username" [(ngModel)]="username" placeholder="Enter your Name to Start">
+    <br>
+    <button (click)="setUsername()" class="btn btn-primary">Register</button>
+    
+</div>
+
+<div *ngIf="alert">  
+    <div class="msg-box" id="style-2">
+        <div *ngFor="let message of messages">
+            <strong>{{message.username}}:</strong>{{message.text}}                
+        </div>    
+    </div>
+    
+    <div class="msg">
+        <label for="">Message:</label>
+        <input type="text" name="message" [(ngModel)]="message" (keyup.enter)="sendMessage()">     
+        <br>
+        <div class="sign">
+            Built with <strong class="red">&hearts;</strong> by Daniel Cunha            
+        </div>   
+    </div>
+</div>
